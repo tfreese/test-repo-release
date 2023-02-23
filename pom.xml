@@ -4,7 +4,7 @@
 
     <groupId>de.freese.test-repo-release</groupId>
     <artifactId>parent</artifactId>
-    <version>1.4</version>
+    <version>1.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2023</inceptionYear>
@@ -19,7 +19,7 @@
         <url>scm:git:git@github.com:tfreese/test-repo-release.git</url>
         <connection>scm:git:git@github.com:tfreese/test-repo-release.git</connection>
         <developerConnection>scm:git:git@github.com:tfreese/test-repo-release.git</developerConnection>
-        <tag>v1.4</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <modules>
