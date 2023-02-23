@@ -56,3 +56,12 @@ Es wird die Kopie der *pom.xml* angezeigt, die alle durchzuführenden Transforma
 *mvn clean release:clean*
 entfernt alle beim Testlauf erzeugten Dateien und bereitet das Projekt so auf die tatsächliche Freigabe vor.
 Kann auch durchgeführt werden, um Relikte zu entfernen, wenn eine Freigabe abgebrochen wurde.
+
+###################################################################################################
+
+mvn clean package
+mvn clean install
+mvn clean deploy    # SNAPSHOTS deployen
+mvn clean release:prepare
+mvn release:perform
+mvn clean release:clean
