@@ -8,6 +8,39 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <inceptionYear>2023</inceptionYear>
+    <url>https://github.com/tfreese/test-repo-release</url>
+
+    <organization>
+        <name>Thomas Freese</name>
+        <url>https://github.com/tfreese</url>
+    </organization>
+
+    <scm>
+        <url>${project.url}</url>
+        <connection>scm:git:git://github.com:tfreese/test-repo-release.git</connection>
+        <developerConnection>scm:git:https://github.com:tfreese/test-repo-release.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>local-repos-releases</id>
+            <url>file:/tmp/maven-distribution/releases</url>
+            <name>Enthält deployte Release Artefakte</name>
+        </repository>
+        <snapshotRepository>
+            <id>local-repos-snapshots</id>
+            <url>file:/tmp/maven-distribution/snapshots</url>
+            <name>Enthält deployte Snapshot Artefakte</name>
+        </snapshotRepository>
+        <site>
+            <id>local-tmp</id>
+            <url>file:/tmp/maven-distribution/sites</url>
+            <name>Enthält die generierten Homepages</name>
+        </site>
+    </distributionManagement>
+
     <modules>
         <module>test-api</module>
         <module>test-impl</module>
