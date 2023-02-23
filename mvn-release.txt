@@ -62,6 +62,7 @@ Kann auch durchgeführt werden, um Relikte zu entfernen, wenn eine Freigabe abge
 mvn clean package
 mvn clean install
 mvn clean deploy    # SNAPSHOTS deployen
-mvn --batch-mode clean release:prepare #-DreleaseVersion=1.1 -DdevelopmentVersion=1.2-SNAPSHOT
+mvn clean release:prepare
+mvn --batch-mode clean release:prepare -DreleaseVersion=1.1 -DdevelopmentVersion=1.2-SNAPSHOT
 mvn release:perform
 mvn clean release:clean
