@@ -1,74 +1,48 @@
-## Bereitstellung eines neuen Releases
 
-### Voraussetzungen
-
-#### Werkzeuge
-
-*   Für das Auschecken des Projekts aus dem Artifactory wird ein git-Client benötigt.
-*   Um eine neue Version zu bauen, wird eine Maven-Installation benötigt.
-
-#### Berechtigungen
-
-Um Änderungen am Code oder der Konfiguration durchzuführen, werden Schreibrechte auf das Artifactory und Bitbucket benötigt.
-
-### Maven
-
-Die Bereitstellung eines neuen Releases erfolgt über Maven.
-Voraussetzung ist, dass es sich bei der aus dem Git-Repository ausgecheckten Version um eine SNAPSHOT-Version handelt.
-Diese Kennzeichnung erfolgt in der Projektdatei *pom.xml* über das Versions-Tag, Beispiel: *5.0.6-SNAPSHOT*
-
-*mvn clean package*
+- mvn clean package
 erzeugt das bereitzustellende Artefakt.
-Kann verwendet werden, um vorab zu testen, ob der Build des Gesamtprojektes oder eines Moduls funktioniert.
-Beim Build eines Moduls muss zuvor dafür gesorgt werden, dass die Artefakte im lokalen Maven-Repository aktuell sind.
+Build des Projektes / Moduls.
 
 
-*mvn clean install*
-im Verzeichnis des Hauptprojekts erzeugt die  Artefakte aller vom Projekt bereitgestellten Module und stellt sie als Dependencies im lokalen Maven-Repository bereit.
-Dieser Vorgang sollte ausgeführt werden, wenn erstmalig gebaut wird oder wenn unklar ist, welchen Stand die Artefakte im lokalen Maven-Repository haben.
-
-*mvn clean deploy*
-erzeugt das bereitzustellende Artefakt und stellt es im *SNAPSHOT*-Repository des Artifactory bereit.
-Dient gleichzeitig als Test, um festzustellen, ob ein Release bereitgestellt werden könnte.
-
-Die folgenden Schritte zur Erzeugung und Bereitstellung einer freigegebenen Version (Release) setzen voraus, dass keine lokalen Änderungen mehr existieren.
-Diese Schritte müssen in der Windows-Eingabeaufforderung ausgeführt werden.
-Im Cygwin-Terminal kann der Bau eines Releases nicht abgeschlossen werden.
-
-*mvn clean release:prepare -DautoVersionSubmodules=true*
-vergibt eine neue Versionsnummer und kennzeichnet diese Version im Git-Repository mit einem Tag.
-
-*mvn clean release:rollback*
-macht die Änderungen rückgängig, wenn es bei der Vorbereitung der Freigabe zu Fehlern gekommen ist.
-
-*mvn release:perform*
-holt die gekennzeichnete Version aus dem Git-Repository und baut sie.
-Abschließend erfolgt das Deployment dieses Builds inklusive Quellcode und JavaDoc in das *Release*-Repository des Artifactory.
+- mvn clean install
+Build des Projektes / Moduls.
+Die Artefakte werden zusätzlich in das lokale Maven-Repository kopiert.
 
 
-### Weitere Möglichkeiten
+- mvn clean deploy
+Build des Projektes / Moduls.
+Die Artefakte werden zusätzlich in das lokale Maven-Repository kopiert
+als auch an den Repository-Server gesendet.
 
-*mvn clean release:prepare -DdryRun=true -DautoVersionSubmodules=true*
-führt einen Testlauf durch, ohne Änderungen am Projekt zu machen.
-Es werden die gleichen Fragen gestellt und die gleichen Tests durchgeführt.
-Es wird die Kopie der *pom.xml* angezeigt, die alle durchzuführenden Transformationen enthält.
 
-*mvn clean release:clean*
-entfernt alle beim Testlauf erzeugten Dateien und bereitet das Projekt so auf die tatsächliche Freigabe vor.
-Kann auch durchgeführt werden, um Relikte zu entfernen, wenn eine Freigabe abgebrochen wurde.
+- mvn              clean release:prepare (-DautoVersionSubmodules=true; siehe maven-release-plugin)
+- mvn --batch-mode clean release:prepare -DreleaseVersion=1.1 -DdevelopmentVersion=1.2-SNAPSHOT
+Vergibt eine neue Versionsnummer und kennzeichnet diese Version im Git-Repository mit einem Tag.
 
-###################################################################################################
 
-mvn versions:set -DnewVersion=1.8-SNAPSHOT
-mvn versions:set -DgroupId=org.apache.maven.* -DartifactId=* -DoldVersion=2.* -DnewVersion=2.1.0-SNAPSHOT
+- mvn clean release:rollback
+Macht die Änderungen rückgängig, wenn es bei der Vorbereitung des Releases zu Fehlern gekommen ist.
 
-mvn versions:revert
-mvn versions:commit
 
-mvn clean package
-mvn clean install
-mvn clean deploy    # SNAPSHOTS deployen
-mvn clean release:prepare
-mvn --batch-mode clean release:prepare -DreleaseVersion=1.1 -DdevelopmentVersion=1.2-SNAPSHOT
-mvn release:perform
-mvn clean release:clean
+- mvn release:perform
+Holt die gekennzeichnete Version aus dem Git-Repository und baut sie.
+Abschließend erfolgt das Deployment dieses Builds inklusive Quellcode und JavaDoc in das *Release*-Repository des Repository-Servers.
+
+
+- mvn clean release:prepare -DdryRun=true -DautoVersionSubmodules=true
+Führt einen Testlauf durch, ohne Änderungen am Projekt zu machen.
+
+- mvn clean release:clean
+Entfernt alle beim Testlauf erzeugten Dateien.
+
+
+- mvn versions:set -DnewVersion=1.8-SNAPSHOT
+Setzt in allen Projekt-POMs die neue Version.
+
+
+- mvn versions:revert
+Macht die Änderungen rückgängig.
+
+
+- mvn versions:commit
+Entfernt alle temporären Dateien.
