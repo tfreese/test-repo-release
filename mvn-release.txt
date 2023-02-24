@@ -59,6 +59,12 @@ Kann auch durchgeführt werden, um Relikte zu entfernen, wenn eine Freigabe abge
 
 ###################################################################################################
 
+mvn versions:set -DnewVersion=1.8-SNAPSHOT
+mvn versions:set -DgroupId=org.apache.maven.* -DartifactId=* -DoldVersion=2.* -DnewVersion=2.1.0-SNAPSHOT
+
+mvn versions:revert
+mvn versions:commit
+
 mvn clean package
 mvn clean install
 mvn clean deploy    # SNAPSHOTS deployen
