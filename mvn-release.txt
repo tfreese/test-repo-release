@@ -40,6 +40,14 @@ Entfernt alle beim Testlauf erzeugten Dateien.
 Setzt in allen Projekt-POMs die neue Version.
 
 
+- mvn -N versions:update-child-modules
+Aktualisiert alle Parent-Versionen.
+
+
+- mvn versions:use-releases
+Ersetzen von SNAPSHOT-Versionen mit ihren RELEASE-Versionen.
+
+
 - mvn versions:revert
 Macht die Änderungen rückgängig.
 
