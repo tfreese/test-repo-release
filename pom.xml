@@ -29,19 +29,19 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependencies -->
-        <version_junit>5.9.3</version_junit>
+        <version_junit>5.10.0</version_junit>
 
         <!-- Plugins -->
-        <version_maven-release-plugin>3.0.0</version_maven-release-plugin>
+        <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
         <version_maven-deploy-plugin>3.1.1</version_maven-deploy-plugin>
-        <version_maven-javadoc-plugin>3.5.0</version_maven-javadoc-plugin>
-        <version_maven-project-info-reports-plugin>3.4.3</version_maven-project-info-reports-plugin>
-        <version_maven-source-plugin>3.2.1</version_maven-source-plugin>
+        <version_maven-javadoc-plugin>3.6.0</version_maven-javadoc-plugin>
+        <version_maven-project-info-reports-plugin>3.4.5</version_maven-project-info-reports-plugin>
+        <version_maven-source-plugin>3.3.0</version_maven-source-plugin>
         <version_maven-site-plugin>3.12.1</version_maven-site-plugin>
     </properties>
 
