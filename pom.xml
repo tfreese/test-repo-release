@@ -34,7 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependencies -->
-        <version_junit>5.10.0</version_junit>
+        <version_junit>5.10.1</version_junit>
 
         <!-- Plugins -->
         <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
