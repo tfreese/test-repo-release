@@ -6,6 +6,9 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+# https://gradlehero.com/build-gradle-projects-with-github-actions/
+# https://github.com/tkgregory/gradle-github-actions-example
+
 name: Java CI with Maven
 
 on:
@@ -39,4 +42,4 @@ jobs:
                 with:
                     name: Test report
                     if-no-files-found: warn
-                    path: test-impl/target/surefire-reports/*
+                    path: test-impl/target/surefire-reports
