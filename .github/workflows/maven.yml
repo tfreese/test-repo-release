@@ -39,4 +39,4 @@ jobs:
                 with:
                     name: Test report
                     if-no-files-found: warn
-                    path: test-repo-release/**/target/surefire-reports/*
+                    path: test-impl/target/surefire-reports/*
