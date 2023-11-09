@@ -42,4 +42,4 @@ jobs:
                 with:
                     name: Test report
                     if-no-files-found: warn
-                    path: test-impl/target/surefire-reports
+                    path: ~/**/target/surefire-reports
