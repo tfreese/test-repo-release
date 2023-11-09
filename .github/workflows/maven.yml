@@ -38,5 +38,5 @@ jobs:
                 uses: actions/upload-artifact@v3
                 with:
                     name: Test report
-                    path: target/surefire-reports/*.txt
-                    fail-on-error: false
+                    if-no-files-found: warn
+                    path: **/target/surefire-reports/*
