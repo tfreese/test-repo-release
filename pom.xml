@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.1.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-alpha-8.xsd">
+    <modelVersion>4.1.0</modelVersion>
 
     <groupId>de.freese.test-repo-release</groupId>
     <artifactId>parent</artifactId>
@@ -29,24 +29,102 @@
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.propertiesEncoding>UTF-8</project.build.propertiesEncoding>
+
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.minimum.version>4.0.0-alpha-8</maven.minimum.version>
 
         <!-- Dependencies -->
         <version_junit>5.10.1</version_junit>
 
         <!-- Plugins -->
-        <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
+        <version_maven-clean-plugin>3.3.2</version_maven-clean-plugin>
+        <version_maven-compiler-plugin>3.11.0</version_maven-compiler-plugin>
         <version_maven-deploy-plugin>3.1.1</version_maven-deploy-plugin>
-        <version_maven-javadoc-plugin>3.6.0</version_maven-javadoc-plugin>
-        <version_maven-project-info-reports-plugin>3.4.5</version_maven-project-info-reports-plugin>
-        <version_maven-source-plugin>3.3.0</version_maven-source-plugin>
+        <version_maven-enforcer-plugin>3.4.1</version_maven-enforcer-plugin>
+        <version_maven-install-plugin>3.1.1</version_maven-install-plugin>
+        <version_maven-jar-plugin>3.3.0</version_maven-jar-plugin>
+        <version_maven-javadoc-plugin>3.6.2</version_maven-javadoc-plugin>
+        <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
+        <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
         <version_maven-site-plugin>3.12.1</version_maven-site-plugin>
+        <version_maven-source-plugin>3.3.0</version_maven-source-plugin>
+        <version_maven-surefire-plugin>3.2.2</version_maven-surefire-plugin>
     </properties>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${version_maven-clean-plugin}</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/bin</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version_maven-compiler-plugin}</version>
+                <configuration>
+                    <release>${java.version}</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <debug>true</debug>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${version_maven-deploy-plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${version_maven-enforcer-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <rules>
+                        <requireMavenVersion>
+                            <version>[${maven.minimum.version},)</version>
+                            <message>You are running an older version of Maven, at least Maven ${maven.minimum.version}</message>
+                        </requireMavenVersion>
+                        <requireJavaVersion>
+                            <version>[${maven.compiler.source},)</version>
+                            <message>You are running an older version of Java, at least JDK ${java.version}</message>
+                        </requireJavaVersion>
+                    </rules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${version_maven-install-plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version_maven-jar-plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${version_maven-javadoc-plugin}</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -59,18 +137,17 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>${version_maven-deploy-plugin}</version>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${version_maven-resources-plugin}</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <propertiesEncoding>${project.build.propertiesEncoding}</propertiesEncoding>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version_maven-javadoc-plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${version_maven-project-info-reports-plugin}</version>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version_maven-surefire-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
