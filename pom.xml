@@ -46,12 +46,12 @@
         <version_maven-enforcer-plugin>3.4.1</version_maven-enforcer-plugin>
         <version_maven-install-plugin>3.1.1</version_maven-install-plugin>
         <version_maven-jar-plugin>3.3.0</version_maven-jar-plugin>
-        <version_maven-javadoc-plugin>3.6.2</version_maven-javadoc-plugin>
+        <version_maven-javadoc-plugin>3.6.3</version_maven-javadoc-plugin>
         <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
-        <version_maven-site-plugin>3.12.1</version_maven-site-plugin>
+        <version_maven-site-plugin>4.0.0-M12</version_maven-site-plugin>
         <version_maven-source-plugin>3.3.0</version_maven-source-plugin>
-        <version_maven-surefire-plugin>3.2.2</version_maven-surefire-plugin>
+        <version_maven-surefire-plugin>3.2.3</version_maven-surefire-plugin>
     </properties>
 
     <build>
