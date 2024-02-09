@@ -4,6 +4,7 @@ package de.freese;
 /**
  * @author Thomas Freese
  */
+@FunctionalInterface
 public interface MyFunction {
     String doSomething();
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/BUILD-CACHE-CONFIG/1.0.0"
+       xsi:schemaLocation="http://maven.apache.org/BUILD-CACHE-CONFIG/1.0.0 https://maven.apache.org/xsd/build-cache-config-1.0.0.xsd">
+
+    <!--Example: maven.apache.org/extensions/maven-build-cache-extension/maven-build-cache-config.xml -->
+
+    <configuration>
+        <enabled>false</enabled>
+        <hashAlgorithm>SHA-256</hashAlgorithm>
+        <validateXml>true</validateXml>
+        <local>
+            <maxBuildsCached>3</maxBuildsCached>
+        </local>
+        <!-- <projectVersioning adjustMetaInf="true"/> -->
+    </configuration>
+
+    <input>
+        <global>
+            <!--  Default is "*"  -->
+            <glob>{*.java,*.properties,*.yaml,*.xml}</glob>
+            <includes>
+                <!--  By default, project sources and resources directories are included (src/main/java and src/main/resources)  -->
+                <!--  In this example, the goal is to include a widder range of src directories (like src/main/assembly or src/main/groovy)  -->
+                <include>src/</include>
+            </includes>
+            <excludes>
+                <exclude>build/</exclude>
+                <exclude>target/</exclude>
+                <exclude>out/</exclude>
+            </excludes>
+        </global>
+    </input>
+
+    <executionControl>
+        <!-- Run always these goals -->
+        <runAlways>
+            <!-- <plugins> -->
+            <!--     <plugin artifactId="maven-failsafe-plugin"/> -->
+            <!-- </plugins> -->
+            <executions>
+                <execution artifactId="maven-deploy-plugin">
+                    <execIds>
+                        <execId>my-execution-id</execId>
+                    </execIds>
+                </execution>
+            </executions>
+            <goalsLists>
+                <goalsList artifactId="maven-install-plugin">
+                    <goals>
+                        <goal>install</goal>
+                    </goals>
+                </goalsList>
+                <goalsList artifactId="maven-deploy-plugin">
+                    <goals>
+                        <goal>deploy</goal>
+                    </goals>
+                </goalsList>
+            </goalsLists>
+        </runAlways>
+    </executionControl>
+
+</cache>

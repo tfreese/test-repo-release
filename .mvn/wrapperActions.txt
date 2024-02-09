@@ -1,0 +1,11 @@
+# Create Wrapper
+mvn wrapper:wrapper
+
+# Update Wrapper
+./mvnw wrapper:wrapper -Dmaven=4.0.0-alpha-12
+
+# 1. Execution updates possibly only the Jar and the CMD-Files.
+# 2. Execution updates the Properties.
+
+# Using Wrapper
+./mvnw compile

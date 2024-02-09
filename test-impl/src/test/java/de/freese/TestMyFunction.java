@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class TestMyFunction {
     @Test
     void testSomething() {
-        MyFunction myFunction = new MyFunctionImpl();
+        final MyFunction myFunction = new MyFunctionImpl();
 
         Assertions.assertEquals("doSomething", myFunction.doSomething());
     }
