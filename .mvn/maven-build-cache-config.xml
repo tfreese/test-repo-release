@@ -5,7 +5,7 @@
     <!--Example: maven.apache.org/extensions/maven-build-cache-extension/maven-build-cache-config.xml -->
 
     <configuration>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
         <hashAlgorithm>SHA-256</hashAlgorithm>
         <validateXml>true</validateXml>
         <local>
