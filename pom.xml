@@ -32,10 +32,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.propertiesEncoding>UTF-8</project.build.propertiesEncoding>
 
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
         <!-- <java.version>21</java.version> -->
-        <maven.minimum.version>4.0.0-alpha-12</maven.minimum.version>
+        <maven.minimum.version>4.0.0-alpha-13</maven.minimum.version>
 
         <!-- Dependencies -->
         <version_junit>5.10.2</version_junit>
@@ -51,7 +51,7 @@
         <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
         <version_maven-site-plugin>4.0.0-M13</version_maven-site-plugin>
-        <version_maven-source-plugin>3.3.0</version_maven-source-plugin>
+        <version_maven-source-plugin>3.3.1</version_maven-source-plugin>
         <version_maven-surefire-plugin>3.2.5</version_maven-surefire-plugin>
     </properties>
 
@@ -214,25 +214,25 @@
                     </servers>
                     -->
 
-                    <!--                    <plugin>-->
-                    <!--                        <groupId>org.sonatype.plugins</groupId>-->
-                    <!--                        <artifactId>nexus-staging-maven-plugin</artifactId>-->
-                    <!--                        <version>1.5.1</version>-->
-                    <!--                        <executions>-->
-                    <!--                            <execution>-->
-                    <!--                                <id>default-deploy</id>-->
-                    <!--                                <phase>deploy</phase>-->
-                    <!--                                <goals>-->
-                    <!--                                    <goal>deploy</goal>-->
-                    <!--                                </goals>-->
-                    <!--                            </execution>-->
-                    <!--                        </executions>-->
-                    <!--                        <configuration>-->
-                    <!--                            <serverId>nexus-releases</serverId>-->
-                    <!--                            <nexusUrl>http://localhost:8081/nexus/</nexusUrl>-->
-                    <!--                            <skipStaging>true</skipStaging>-->
-                    <!--                        </configuration>-->
-                    <!--                    </plugin>-->
+                    <!-- <plugin> -->
+                    <!--     <groupId>org.sonatype.plugins</groupId> -->
+                    <!--     <artifactId>nexus-staging-maven-plugin</artifactId> -->
+                    <!--     <version>1.5.1</version> -->
+                    <!--     <executions> -->
+                    <!--         <execution> -->
+                    <!--             <id>default-deploy</id> -->
+                    <!--             <phase>deploy</phase> -->
+                    <!--             <goals> -->
+                    <!--                 <goal>deploy</goal> -->
+                    <!--             </goals> -->
+                    <!--         </execution> -->
+                    <!--     </executions> -->
+                    <!--     <configuration> -->
+                    <!--         <serverId>nexus-releases</serverId> -->
+                    <!--         <nexusUrl>http://localhost:8081/nexus/</nexusUrl> -->
+                    <!--         <skipStaging>true</skipStaging> -->
+                    <!--     </configuration> -->
+                    <!-- </plugin> -->
                 </plugins>
             </build>
         </profile>
