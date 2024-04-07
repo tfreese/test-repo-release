@@ -11,6 +11,8 @@
     <artifactId>test-impl</artifactId>
     <packaging>jar</packaging>
 
+    <name>${project.groupId} - ${project.artifactId}</name>
+
     <dependencies>
         <!-- compile scope -->
         <dependency>

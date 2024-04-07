@@ -8,6 +8,7 @@
     <version>1.9-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>${project.groupId} - ${project.artifactId}</name>
     <inceptionYear>2023</inceptionYear>
     <url>https://github.com/tfreese/test-repo-release</url>
 
@@ -42,7 +43,7 @@
 
         <!-- Plugins -->
         <version_maven-clean-plugin>3.3.2</version_maven-clean-plugin>
-        <version_maven-compiler-plugin>3.12.1</version_maven-compiler-plugin>
+        <version_maven-compiler-plugin>3.13.0</version_maven-compiler-plugin>
         <version_maven-deploy-plugin>3.1.1</version_maven-deploy-plugin>
         <version_maven-enforcer-plugin>3.4.1</version_maven-enforcer-plugin>
         <version_maven-install-plugin>3.1.1</version_maven-install-plugin>

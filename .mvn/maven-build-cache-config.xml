@@ -5,7 +5,7 @@
     <!--Example: maven.apache.org/extensions/maven-build-cache-extension/maven-build-cache-config.xml -->
 
     <configuration>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <hashAlgorithm>SHA-256</hashAlgorithm>
         <validateXml>true</validateXml>
         <local>
@@ -20,7 +20,7 @@
             <glob>{*.java,*.properties,*.yaml,*.xml}</glob>
             <includes>
                 <!--  By default, project sources and resources directories are included (src/main/java and src/main/resources)  -->
-                <!--  In this example, the goal is to include a widder range of src directories (like src/main/assembly or src/main/groovy)  -->
+                <!--  In this example, the goal is to include a wider range of src directories (like src/main/assembly or src/main/groovy)  -->
                 <include>src/</include>
             </includes>
             <excludes>
