@@ -47,7 +47,7 @@
         <version_maven-deploy-plugin>3.1.1</version_maven-deploy-plugin>
         <version_maven-enforcer-plugin>3.4.1</version_maven-enforcer-plugin>
         <version_maven-install-plugin>3.1.1</version_maven-install-plugin>
-        <version_maven-jar-plugin>3.3.0</version_maven-jar-plugin>
+        <version_maven-jar-plugin>3.4.0</version_maven-jar-plugin>
         <version_maven-javadoc-plugin>3.6.3</version_maven-javadoc-plugin>
         <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
