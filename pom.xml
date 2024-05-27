@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.1.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-alpha-12.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-alpha-13.xsd">
     <modelVersion>4.1.0</modelVersion>
 
     <groupId>de.freese.test-repo-release</groupId>
@@ -32,11 +32,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.propertiesEncoding>UTF-8</project.build.propertiesEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+        <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
+        <createChecksum>true</createChecksum>
 
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
-        <!-- <java.version>21</java.version> -->
-        <maven.minimum.version>4.0.0-alpha-13</maven.minimum.version>
+        <java.version>22</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <maven.minimum.version>4.0.0-beta-3</maven.minimum.version>
 
         <!-- Dependencies -->
         <version_junit>5.10.2</version_junit>
@@ -76,7 +81,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version_maven-compiler-plugin}</version>
                 <configuration>
-                    <!-- <release>${java.version}</release> -->
+                    <release>${java.version}</release>
                     <!-- <source>${java.version}</source> -->
                     <!-- <target>${java.version}</target> -->
                     <encoding>${project.build.sourceEncoding}</encoding>
@@ -194,17 +199,17 @@
         <repository>
             <id>local-repos-releases</id>
             <url>file:/tmp/maven-distribution/releases</url>
-            <name>Enthält deployte Release Artefakte</name>
+            <name>Contains deployed Release-Artefacts</name>
         </repository>
         <snapshotRepository>
             <id>local-repos-snapshots</id>
             <url>file:/tmp/maven-distribution/snapshots</url>
-            <name>Enthält deployte Snapshot Artefakte</name>
+            <name>Contains deployed Snapshot-Artefacts</name>
         </snapshotRepository>
         <site>
             <id>local-tmp</id>
             <url>file:/tmp/maven-distribution/sites</url>
-            <name>Enthält die generierten Homepages</name>
+            <name>Contains the generated Homepages</name>
         </site>
     </distributionManagement>
 
