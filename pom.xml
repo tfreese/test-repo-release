@@ -58,7 +58,7 @@
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
         <version_maven-site-plugin>4.0.0-M14</version_maven-site-plugin>
         <version_maven-source-plugin>3.3.1</version_maven-source-plugin>
-        <version_maven-surefire-plugin>3.2.5</version_maven-surefire-plugin>
+        <version_maven-surefire-plugin>3.3.0</version_maven-surefire-plugin>
         <version_versions-maven-plugin>2.16.2</version_versions-maven-plugin>
     </properties>
 
