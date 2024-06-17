@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.1.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-alpha-13.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-beta-3.xsd">
     <modelVersion>4.1.0</modelVersion>
 
     <groupId>de.freese.test-repo-release</groupId>
@@ -54,7 +54,7 @@
         <version_maven-install-plugin>3.1.2</version_maven-install-plugin>
         <version_maven-jar-plugin>3.4.1</version_maven-jar-plugin>
         <version_maven-javadoc-plugin>3.7.0</version_maven-javadoc-plugin>
-        <version_maven-release-plugin>3.0.1</version_maven-release-plugin>
+        <version_maven-release-plugin>3.1.0</version_maven-release-plugin>
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
         <version_maven-site-plugin>4.0.0-M14</version_maven-site-plugin>
         <version_maven-source-plugin>3.3.1</version_maven-source-plugin>
