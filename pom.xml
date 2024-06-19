@@ -56,7 +56,7 @@
         <version_maven-javadoc-plugin>3.7.0</version_maven-javadoc-plugin>
         <version_maven-release-plugin>3.1.0</version_maven-release-plugin>
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
-        <version_maven-site-plugin>4.0.0-M14</version_maven-site-plugin>
+        <version_maven-site-plugin>4.0.0-M15</version_maven-site-plugin>
         <version_maven-source-plugin>3.3.1</version_maven-source-plugin>
         <version_maven-surefire-plugin>3.3.0</version_maven-surefire-plugin>
         <version_versions-maven-plugin>2.16.2</version_versions-maven-plugin>
