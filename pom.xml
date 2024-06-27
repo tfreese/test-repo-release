@@ -44,7 +44,7 @@
         <maven.minimum.version>4.0.0-beta-3</maven.minimum.version>
 
         <!-- Dependencies -->
-        <version_junit>5.10.2</version_junit>
+        <version_junit>5.10.3</version_junit>
 
         <!-- Plugins -->
         <version_maven-clean-plugin>3.4.0</version_maven-clean-plugin>
@@ -189,7 +189,7 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${version_versions-maven-plugin}</version>
                 <configuration>
-                    <ignoredVersions>.*-M.*,.*-alpha.*</ignoredVersions>
+                    <ignoredVersions>.*-M.*,.*-alpha.*,.*-rc.*</ignoredVersions>
                 </configuration>
             </plugin>
         </plugins>
