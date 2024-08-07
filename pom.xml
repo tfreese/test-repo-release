@@ -189,7 +189,8 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${version_versions-maven-plugin}</version>
                 <configuration>
-                    <ignoredVersions>.*-M.*,.*-alpha.*,.*-rc.*</ignoredVersions>
+                    <ignoredVersions>.*-M.*,.*-[aA][lL][pP][hH][aA].*,.*-[rR][cC].*</ignoredVersions>
+                    <!-- <ruleSet>...</ruleSet> -->
                 </configuration>
             </plugin>
         </plugins>
