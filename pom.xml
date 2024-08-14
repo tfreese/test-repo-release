@@ -44,7 +44,7 @@
         <maven.minimum.version>4.0.0-beta-3</maven.minimum.version>
 
         <!-- Dependencies -->
-        <version_junit>5.10.3</version_junit>
+        <version_junit>5.11.0</version_junit>
 
         <!-- Plugins -->
         <version_maven-clean-plugin>3.4.0</version_maven-clean-plugin>
