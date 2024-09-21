@@ -56,7 +56,7 @@
         <version_maven-javadoc-plugin>3.10.0</version_maven-javadoc-plugin>
         <version_maven-release-plugin>3.1.1</version_maven-release-plugin>
         <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
-        <version_maven-site-plugin>4.0.0-M15</version_maven-site-plugin>
+        <version_maven-site-plugin>4.0.0-M16</version_maven-site-plugin>
         <version_maven-source-plugin>3.3.1</version_maven-source-plugin>
         <version_maven-surefire-plugin>3.5.0</version_maven-surefire-plugin>
         <version_versions-maven-plugin>2.17.1</version_versions-maven-plugin>
@@ -189,7 +189,7 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${version_versions-maven-plugin}</version>
                 <configuration>
-                    <ignoredVersions>.*-M.*,.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*</ignoredVersions>
+                    <ignoredVersions>.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*</ignoredVersions>
                     <!-- <ruleSet>...</ruleSet> -->
                 </configuration>
             </plugin>
