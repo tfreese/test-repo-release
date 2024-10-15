@@ -10,18 +10,18 @@
     <interactiveMode>true</interactiveMode>
     <offline>false</offline>
 
-    <proxies>
-        <proxy>
-            <active>false</active>
-            <id>local-proxy</id>
-            <protocol>http</protocol>
-            <host>localhost</host>
-            <port>7998</port>
-            <username>tommy</username>
-            <password>...</password>
-            <nonProxyHosts>localhost|host1|*.domain</nonProxyHosts>
-        </proxy>
-    </proxies>
+    <!-- <proxies> -->
+    <!--     <proxy> -->
+    <!--         <active>false</active> -->
+    <!--         <id>local-proxy</id> -->
+    <!--         <protocol>http</protocol> -->
+    <!--         <host>localhost</host> -->
+    <!--         <port>7998</port> -->
+    <!--         <username>tommy</username> -->
+    <!--         <password>...</password> -->
+    <!--         <nonProxyHosts>localhost|host1|*.domain</nonProxyHosts> -->
+    <!--     </proxy> -->
+    <!-- </proxies> -->
 
     <servers>
         <server>
@@ -43,33 +43,33 @@
     </mirrors>
 
     <profiles>
-        <profile>
-            <id>maven-central</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>maven-central</id>
-                    <name>maven-central</name>
-                    <url>http://central</url>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>daily</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>daily</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
-                </repository>
-            </repositories>
-        </profile>
+        <!-- <profile> -->
+        <!--     <id>maven-central</id> -->
+        <!--     <activation> -->
+        <!--         <activeByDefault>true</activeByDefault> -->
+        <!--     </activation> -->
+        <!--     <repositories> -->
+        <!--         <repository> -->
+        <!--             <id>maven-central</id> -->
+        <!--             <name>maven-central</name> -->
+        <!--             <url>http://central</url> -->
+        <!--             <releases> -->
+        <!--                 <enabled>true</enabled> -->
+        <!--                 <updatePolicy>daily</updatePolicy> -->
+        <!--                 <checksumPolicy>fail</checksumPolicy> -->
+        <!--             </releases> -->
+        <!--             <snapshots> -->
+        <!--                 <enabled>true</enabled> -->
+        <!--                 <updatePolicy>daily</updatePolicy> -->
+        <!--                 <checksumPolicy>fail</checksumPolicy> -->
+        <!--             </snapshots> -->
+        <!--         </repository> -->
+        <!--     </repositories> -->
+        <!-- </profile> -->
     </profiles>
 
-    <activeProfiles>
-        <!-- Order define the Query-Order -->
-        <activeProfile>maven-central</activeProfile>
-    </activeProfiles>
+    <!-- <activeProfiles> -->
+    <!--     &lt;!&ndash; Order define the Query-Order &ndash;&gt; -->
+    <!--     <activeProfile>maven-central</activeProfile> -->
+    <!-- </activeProfiles> -->
 </settings>

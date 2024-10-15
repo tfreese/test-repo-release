@@ -4,7 +4,7 @@ package de.freese;
 /**
  * @author Thomas Freese
  */
-public class MyFunctionImpl implements MyFunction {
+public final class MyFunctionImpl implements MyFunction {
     @Override
     public String doSomething() {
         return "doSomething";

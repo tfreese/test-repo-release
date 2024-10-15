@@ -6,5 +6,8 @@ package de.freese;
  */
 @FunctionalInterface
 public interface MyFunction {
+    /**
+     * @return String
+     */
     String doSomething();
 }
