@@ -47,27 +47,27 @@
 
         <maven.minimum.version>4.0.0-beta-4</maven.minimum.version>
 
-        <!-- Dependencies -->
-        <version_checkstyle>10.18.2</version_checkstyle>
-        <version_junit>5.11.2</version_junit>
+        <!-- Own Dependencies/Plugins -->
+        <!-- Prefix: version. -->
+        <version.checkstyle>10.18.2</version.checkstyle>
+        <version.junit>5.11.2</version.junit>
 
-        <!-- Plugins -->
-        <version_dependency-check-maven>8.4.3</version_dependency-check-maven>
-        <version_maven-clean-plugin>3.4.0</version_maven-clean-plugin>
-        <version_maven-checkstyle-plugin>3.5.0</version_maven-checkstyle-plugin>
-        <version_maven-compiler-plugin>3.13.0</version_maven-compiler-plugin>
-        <version_maven-deploy-plugin>3.1.3</version_maven-deploy-plugin>
-        <version_maven-enforcer-plugin>3.5.0</version_maven-enforcer-plugin>
-        <version_maven-project-info-reports-plugin>3.7.0</version_maven-project-info-reports-plugin>
-        <version_maven-install-plugin>3.1.3</version_maven-install-plugin>
-        <version_maven-jar-plugin>3.4.2</version_maven-jar-plugin>
-        <version_maven-javadoc-plugin>3.10.1</version_maven-javadoc-plugin>
-        <version_maven-release-plugin>3.1.1</version_maven-release-plugin>
-        <version_maven-resources-plugin>3.3.1</version_maven-resources-plugin>
-        <version_maven-site-plugin>4.0.0-M16</version_maven-site-plugin>
-        <version_maven-source-plugin>3.3.1</version_maven-source-plugin>
-        <version_maven-surefire-plugin>3.5.1</version_maven-surefire-plugin>
-        <version_versions-maven-plugin>2.17.1</version_versions-maven-plugin>
+        <version.dependency-check-maven>8.4.3</version.dependency-check-maven>
+        <version.maven-clean-plugin>3.4.0</version.maven-clean-plugin>
+        <version.maven-checkstyle-plugin>3.5.0</version.maven-checkstyle-plugin>
+        <version.maven-compiler-plugin>3.13.0</version.maven-compiler-plugin>
+        <version.maven-deploy-plugin>3.1.3</version.maven-deploy-plugin>
+        <version.maven-enforcer-plugin>3.5.0</version.maven-enforcer-plugin>
+        <version.maven-project-info-reports-plugin>3.7.0</version.maven-project-info-reports-plugin>
+        <version.maven-install-plugin>3.1.3</version.maven-install-plugin>
+        <version.maven-jar-plugin>3.4.2</version.maven-jar-plugin>
+        <version.maven-javadoc-plugin>3.10.1</version.maven-javadoc-plugin>
+        <version.maven-release-plugin>3.1.1</version.maven-release-plugin>
+        <version.maven-resources-plugin>3.3.1</version.maven-resources-plugin>
+        <version.maven-site-plugin>4.0.0-M16</version.maven-site-plugin>
+        <version.maven-source-plugin>3.3.1</version.maven-source-plugin>
+        <version.maven-surefire-plugin>3.5.1</version.maven-surefire-plugin>
+        <version.versions-maven-plugin>2.17.1</version.versions-maven-plugin>
     </properties>
 
     <build>
@@ -75,7 +75,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>${version_maven-clean-plugin}</version>
+                <version>${version.maven-clean-plugin}</version>
                 <configuration>
                     <filesets>
                         <fileset>
@@ -87,7 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version_maven-compiler-plugin}</version>
+                <version>${version.maven-compiler-plugin}</version>
                 <configuration>
                     <release>${java.version}</release>
                     <!-- <source>${java.version}</source> -->
@@ -101,12 +101,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${version_maven-checkstyle-plugin}</version>
+                <version>${version.maven-checkstyle-plugin}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>${version_checkstyle}</version>
+                        <version>${version.checkstyle}</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -135,12 +135,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>${version_maven-deploy-plugin}</version>
+                <version>${version.maven-deploy-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${version_maven-enforcer-plugin}</version>
+                <version>${version.maven-enforcer-plugin}</version>
                 <executions>
                     <execution>
                         <id>enforce-versions</id>
@@ -165,27 +165,27 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>${version_maven-install-plugin}</version>
+                <version>${version.maven-install-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>${version_maven-jar-plugin}</version>
+                <version>${version.maven-jar-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version_maven-javadoc-plugin}</version>
+                <version>${version.maven-javadoc-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${version_maven-project-info-reports-plugin}</version>
+                <version>${version.maven-project-info-reports-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>${version_maven-release-plugin}</version>
+                <version>${version.maven-release-plugin}</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
@@ -195,7 +195,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${version_maven-resources-plugin}</version>
+                <version>${version.maven-resources-plugin}</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <propertiesEncoding>${project.build.propertiesEncoding}</propertiesEncoding>
@@ -204,7 +204,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${version_maven-surefire-plugin}</version>
+                <version>${version.maven-surefire-plugin}</version>
                 <configuration>
                     <rerunFailingTestsCount>3</rerunFailingTestsCount>
 
@@ -224,12 +224,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${version_maven-source-plugin}</version>
+                <version>${version.maven-source-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>${version_maven-site-plugin}</version>
+                <version>${version.maven-site-plugin}</version>
                 <configuration>
                     <locales>de</locales>
                     <generateProjectInfo>true</generateProjectInfo>
@@ -242,7 +242,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>${version_versions-maven-plugin}</version>
+                <version>${version.versions-maven-plugin}</version>
                 <configuration>
                     <ignoredVersions>.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*</ignoredVersions>
                     <!-- <ruleSet>...</ruleSet> -->
@@ -251,7 +251,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>${version_dependency-check-maven}</version>
+                <version>${version.dependency-check-maven}</version>
             </plugin>
         </plugins>
     </build>
@@ -293,7 +293,7 @@
                     <!-- <plugin> -->
                     <!--     <groupId>org.sonatype.plugins</groupId> -->
                     <!--     <artifactId>nexus-staging-maven-plugin</artifactId> -->
-                    <!--     <version>1.5.1</version> -->
+                    <!--     <version>1.7.0</version> -->
                     <!--     <executions> -->
                     <!--         <execution> -->
                     <!--             <id>default-deploy</id> -->
@@ -319,12 +319,12 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
-                <version>${version_junit}</version>
+                <version>${version.junit}</version>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
-                <version>${version_junit}</version>
+                <version>${version.junit}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
