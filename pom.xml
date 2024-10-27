@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.1.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-beta-4.xsd">
-    <modelVersion>4.1.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0-beta-5.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.freese.test-repo-release</groupId>
     <artifactId>parent</artifactId>
@@ -49,7 +49,7 @@
 
         <!-- Own Dependencies/Plugins -->
         <!-- Prefix: version. -->
-        <version.checkstyle>10.18.2</version.checkstyle>
+        <version.checkstyle>10.19.0</version.checkstyle>
         <version.junit>5.11.3</version.junit>
 
         <version.dependency-check-maven>8.4.3</version.dependency-check-maven>
@@ -396,7 +396,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${version_maven-checkstyle-plugin}</version>
+                <version>${version.maven-checkstyle-plugin}</version>
                 <!-- <configuration> -->
                 <!--     <skip>${checkstyle.skip}</skip> -->
                 <!--     <configLocation>${checkstyle.xml}</configLocation> -->
