@@ -49,7 +49,7 @@
 
         <!-- Own Dependencies/Plugins -->
         <!-- Prefix: version. -->
-        <version.checkstyle>10.20.2</version.checkstyle>
+        <version.checkstyle>10.21.0</version.checkstyle>
         <version.junit>5.11.3</version.junit>
 
         <version.dependency-check-maven>8.4.3</version.dependency-check-maven>
