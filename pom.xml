@@ -49,7 +49,6 @@
 
         <!-- Own Dependencies/Plugins -->
         <!-- Prefix: version. -->
-        <version.checkstyle>10.21.0</version.checkstyle>
         <version.junit>5.11.4</version.junit>
 
         <version.maven-clean-plugin>3.4.0</version.maven-clean-plugin>
@@ -220,7 +219,7 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${version.versions-maven-plugin}</version>
                 <configuration>
-                    <ignoredVersions>.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*</ignoredVersions>
+                    <ignoredVersions>.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*,.*[\.-][mM]\d$</ignoredVersions>
                     <!-- <ruleSet>...</ruleSet> -->
                 </configuration>
             </plugin>
