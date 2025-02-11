@@ -219,8 +219,8 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${version.versions-maven-plugin}</version>
                 <configuration>
-                    <ignoredVersions>.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*,.*[\.-][mM]\d$</ignoredVersions>
-                    <!-- <ruleSet>...</ruleSet> -->
+                    <!-- <ignoredVersions>.*-[aA][lL][pP][hH][aA].*,.*-[bB][eE][tT][aA].*,.*-[rR][cC].*,.*[\.-][mM]\d</ignoredVersions> -->
+                    <rulesUri>file:${user.home}/.m2/rule-set.xml</rulesUri>
                 </configuration>
             </plugin>
         </plugins>
