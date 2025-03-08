@@ -4,7 +4,6 @@
 
     <localRepository>${user.home}/.m2/repository</localRepository>
     <!--localRepository>${java.io.tmpdir}/.m2/repository</localRepository-->
-    <!--localRepository>/maven-repositories/${user.name}</localRepository -->
     <!--localRepository>//NETWORK/DRIVE</localRepository -->
 
     <interactiveMode>true</interactiveMode>
