@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- standalone="yes" -->
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.1.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd"
+         root="true">
+    <!-- root="true" = Access THIS Directory by ${project.rootDirectory} or where .mvn is. -->
+    <modelVersion>4.1.0</modelVersion>
 
     <groupId>de.freese.test-repo-release</groupId>
     <artifactId>parent</artifactId>
@@ -24,14 +26,10 @@
         <tag>v1.8</tag>
     </scm>
 
-    <modules>
-        <module>test-api</module>
-        <module>test-impl</module>
-    </modules>
-    <!-- <subprojects> -->
-    <!--     <subproject>test-api</subproject> -->
-    <!--     <subproject>test-impl</subproject> -->
-    <!-- </subprojects> -->
+    <subprojects>
+        <subproject>test-api</subproject>
+        <subproject>test-impl</subproject>
+    </subprojects>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,11 +39,11 @@
         <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
         <createChecksum>true</createChecksum>
 
-        <java.version>23</java.version>
+        <java.version>24</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <maven.minimum.version>3.9.9</maven.minimum.version>
+        <maven.minimum.version>4.0.0-rc-3</maven.minimum.version>
 
         <!-- Own Dependencies/Plugins -->
         <!-- Prefix: version. -->
