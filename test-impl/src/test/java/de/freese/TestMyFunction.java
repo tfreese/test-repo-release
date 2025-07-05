@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
  * @author Thomas Freese
  */
 class TestMyFunction {
+    // @TempDir(cleanup = CleanupMode.ALWAYS)
+    // private static Path pathTest;
+
     @Test
     void testSomething() {
         final MyFunction myFunction = new MyFunctionImpl();
