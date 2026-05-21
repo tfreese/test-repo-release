@@ -1,0 +1,22 @@
+<ivysettings>
+
+    <settings defaultResolver="local-ivy-repo" />
+
+    <credentials host="repo.example.com"
+                 realm="Repository"
+                 username="${remote.repo.user}"
+                 passwd="${remote.repo.pass}" />
+
+    <resolvers>
+        <filesystem name="local-ivy-repo">
+            <artifact pattern="${project.build.directory}/ivy-repo/[organisation]/[module](/[branch])/[type]s/[artifact]-[revision].[ext]" />
+            <ivy pattern="${project.build.directory}/ivy-repo/[organisation]/[module](/[branch])/[type]s/[artifact]-[revision].[ext]" />
+        </filesystem>
+
+        <url name="remote-ivy-repo">
+            <artifact pattern="https://repo.example.com/[organisation]/[module](/[branch])/[type]s/[artifact]-[revision].[ext]" />
+            <ivy pattern="https://repo.example.com/[organisation]/[module](/[branch])/[type]s/[artifact]-[revision].[ext]" />
+        </url>
+    </resolvers>
+
+</ivysettings>

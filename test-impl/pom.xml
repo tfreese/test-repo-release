@@ -1,17 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- standalone="yes" -->
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.1.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
-    <modelVersion>4.1.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>de.freese.test-repo-release</groupId>
         <artifactId>parent</artifactId>
+        <version>1.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>test-impl</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.groupId} - ${project.artifactId}</name>
+
+    <build>
+        <plugins>
+            <!-- Default Deploy ggf. deaktivieren. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+            <!-- <plugin> -->
+            <!--     <groupId>org.apache.maven.plugins</groupId> -->
+            <!--     <artifactId>maven-help-plugin</artifactId> -->
+            <!--     <executions> -->
+            <!--         <execution> -->
+            <!--             <id>effective-pom</id> -->
+            <!--             <phase>prepare-package</phase> -->
+            <!--             <goals> -->
+            <!--                 <goal>effective-pom</goal> -->
+            <!--             </goals> -->
+            <!--             <configuration> -->
+            <!--                 <output>${project.build.directory}/effective-pom.xml</output> -->
+            <!--             </configuration> -->
+            <!--         </execution> -->
+            <!--     </executions> -->
+            <!-- </plugin> -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>ivy-publish</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <skip>false</skip>
+                            <target xmlns:ivy="antlib:org.apache.ivy.ant">
+                                <!-- Workaround for maven-4.* -->
+                                <!-- <path id="ivy.lib.path"> -->
+                                <!--     <pathelement location="${org.apache.ivy:ivy:jar}" /> -->
+                                <!-- </path> -->
+                                <!-- <taskdef resource="org/apache/ivy/ant/antlib.xml" -->
+                                <!--          uri="antlib:org.apache.ivy.ant" -->
+                                <!--          classpathref="ivy.lib.path" /> -->
+
+                                <!-- <taskdef resource="org/apache/ivy/ant/antlib.xml" -->
+                                <!--          uri="antlib:org.apache.ivy.ant" -->
+                                <!--          classpathref="maven.plugin.classpath" /> -->
+                                <!-- <taskdef name="ivy-settings" classname="org.apache.ivy.ant.IvyConfigure" classpathref="maven.plugin.classpath" /> -->
+                                <!-- <taskdef name="ivy-resolve" classname="org.apache.ivy.ant.IvyResolve" classpathref="maven.plugin.classpath" /> -->
+                                <!-- <taskdef name="ivy-publish" classname="org.apache.ivy.ant.IvyPublish" classpathref="maven.plugin.classpath" /> -->
+
+                                <!-- Ggf. Modul Namen anpassen -> mod -->
+                                <!-- <copy file="${project.build.directory}/${project.artifactId}-${project.version}.jar" -->
+                                <!--       tofile="${project.build.directory}/mod-${project.version}.jar" -->
+                                <!--       overwrite="true" -->
+                                <!-- /> -->
+
+                                <ivy:settings file="${project.basedir}/ivysettings.xml" />
+
+                                <!-- ivy.xml automatisch generieren. -->
+                                <!-- <echo file="${project.build.directory}/ivy.xml">&lt;ivy-module version="2.0"&gt; -->
+                                <!--     &lt;info organisation="${project.groupId}" -->
+                                <!--     module="${project.artifactId}" -->
+                                <!--     revision="${project.version}" -->
+                                <!--     status="integration"/&gt; -->
+                                <!--     &lt;publications&gt; -->
+                                <!--     &lt;artifact name="${project.artifactId}" type="jar" ext="jar"/&gt; -->
+                                <!--     &lt;/publications&gt; -->
+                                <!--     &lt;/ivy-module&gt; -->
+                                <!-- </echo> -->
+
+                                <!-- POM → ivy.xml konvertieren (inkl. Dependencies) -->
+                                <!-- effective-pom benötigt -->
+                                <!-- <ivy:convertpom pomFile="${project.basedir}/pom.xml" -->
+                                <!--                 ivyFile="${project.build.directory}/ivy.xml" /> -->
+
+                                <ivy:resolve file="${project.basedir}/ivy.xml" />
+
+                                <ivy:publish resolver="local-ivy-repo"
+                                             organisation="de.freese"
+                                             module="${project.artifactId}"
+                                             revision="${project.version}"
+                                             overwrite="true"
+                                             publishivy="true">
+                                    <ivy:artifacts pattern="${project.build.directory}/[artifact]-[revision].[ext]" />
+                                </ivy:publish>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ivy</groupId>
+                        <artifactId>ivy</artifactId>
+                        <version>${version.ivy}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <!-- compile scope -->

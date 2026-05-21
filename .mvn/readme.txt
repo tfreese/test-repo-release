@@ -7,6 +7,7 @@ mvn wrapper:wrapper
 
 #./mvnw wrapper:wrapper -Dtype=bin -Dmaven=4.0.0-rc-5
 ./mvnw wrapper:wrapper -Dmaven=4.0.0-rc-5
+./mvnw wrapper:wrapper -Dmaven=3.9.16
 
 # Using Wrapper
 ./mvnw GOAL
