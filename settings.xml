@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/SETTINGS/2.0.0"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/2.0.0 https://maven.apache.org/xsd/settings-2.0.0.xsd">
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://maven.apache.org/SETTINGS/1.2.0"
+          xsi:schemaLocation="https://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
 
     <localRepository>${user.home}/.m2/repository</localRepository>
     <!--localRepository>${java.io.tmpdir}/.m2/repository</localRepository-->
@@ -24,51 +24,80 @@
 
     <servers>
         <server>
-            <id>central</id>
+            <id>central-mirror</id>
             <configuration>
-                <connectionTimeout>15000</connectionTimeout>
-                <readTimeout>15000</readTimeout>
+                <connectionTimeout>15000</connectionTimeout> <!-- milliseconds -->
+                <readTimeout>15000</readTimeout> <!-- milliseconds -->
             </configuration>
         </server>
+
+        <!-- Set Env.-Variables in Build-Tools/Maven/Runners -->
+        <!-- <server> -->
+        <!--     <id>secured-mirror</id> -->
+        <!--     <username>${env.USER}</username> -->
+        <!--     <password>${env.TOKEN}</password> -->
+        <!--     <configuration> -->
+        <!--         <connectionTimeout>15000</connectionTimeout> -->
+        <!--         <readTimeout>15000</readTimeout> -->
+        <!--     </configuration> -->
+        <!-- </server> -->
     </servers>
 
     <mirrors>
         <mirror>
-            <id>central</id>
-            <name>central</name>
+            <id>central-mirror</id>
+            <mirrorOf>*</mirrorOf>
             <url>https://repo.maven.apache.org/maven2</url>
-            <mirrorOf>central</mirrorOf>
         </mirror>
+
+        <!-- <mirror> -->
+        <!--     <id>secured-mirror</id> -->
+        <!--     <mirrorOf>*</mirrorOf> -->
+        <!--     <url>https://HOST</url> -->
+        <!-- </mirror> -->
     </mirrors>
 
     <profiles>
-        <!-- <profile> -->
-        <!--     <id>maven-central</id> -->
-        <!--     <activation> -->
-        <!--         <activeByDefault>true</activeByDefault> -->
-        <!--     </activation> -->
-        <!--     <repositories> -->
-        <!--         <repository> -->
-        <!--             <id>maven-central</id> -->
-        <!--             <name>maven-central</name> -->
-        <!--             <url>http://central</url> -->
-        <!--             <releases> -->
-        <!--                 <enabled>true</enabled> -->
-        <!--                 <updatePolicy>daily</updatePolicy> -->
-        <!--                 <checksumPolicy>fail</checksumPolicy> -->
-        <!--             </releases> -->
-        <!--             <snapshots> -->
-        <!--                 <enabled>true</enabled> -->
-        <!--                 <updatePolicy>daily</updatePolicy> -->
-        <!--                 <checksumPolicy>fail</checksumPolicy> -->
-        <!--             </snapshots> -->
-        <!--         </repository> -->
-        <!--     </repositories> -->
-        <!-- </profile> -->
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
     </profiles>
 
-    <!-- <activeProfiles> -->
-    <!--     &lt;!&ndash; Order define the Query-Order &ndash;&gt; -->
-    <!--     <activeProfile>maven-central</activeProfile> -->
-    <!-- </activeProfiles> -->
+    <activeProfiles>
+        <!-- Order define the Query-Order -->
+        <activeProfile>default</activeProfile>
+    </activeProfiles>
 </settings>
