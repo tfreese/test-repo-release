@@ -95,6 +95,21 @@
 
                                 <ivy:resolve file="${project.basedir}/ivy.xml" />
 
+                                <!-- Download -->
+                                <!-- <ivy:retrieve pattern="${project.build.directory}/ivy-libs/[artifact]-[revision].[ext]"/> -->
+
+                                <!-- Create POM. -->
+                                <!-- <ivy:makepom ivyfile="${basedir}/ivy.xml" -->
+                                <!--              pomfile="${project.build.directory}/ivy-${project.version}.pom" -->
+                                <!--              artifactPackaging="jar" -->
+                                <!--              description="My enterprise module"> -->
+                                <!--     <mapping conf="default" scope="compile" /> -->
+                                <!--     <mapping conf="compile" scope="compile" /> -->
+                                <!--     <mapping conf="runtime" scope="runtime" /> -->
+                                <!--     <mapping conf="test" scope="test" /> -->
+                                <!--     <mapping conf="provided" scope="provided" /> -->
+                                <!-- </ivy:makepom> -->
+
                                 <ivy:publish resolver="local-ivy-repo"
                                              organisation="de.freese"
                                              module="${project.artifactId}"
