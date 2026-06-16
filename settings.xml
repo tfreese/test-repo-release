@@ -65,7 +65,7 @@
             </activation>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>central</id>
+                    <id>central-mirror</id>
                     <url>https://repo.maven.apache.org/maven2</url>
                     <releases>
                         <enabled>true</enabled>
@@ -79,7 +79,7 @@
             </pluginRepositories>
             <repositories>
                 <repository>
-                    <id>central</id>
+                    <id>central-mirror</id>
                     <url>https://repo.maven.apache.org/maven2</url>
                     <releases>
                         <enabled>true</enabled>
@@ -94,10 +94,30 @@
                 </repository>
             </repositories>
         </profile>
+        <profile>
+            <id>rate-limit</id>
+            <properties>
+                <!-- Parallele Downloads reduzieren (Default: 5) -->
+                <maven.artifact.threads>2</maven.artifact.threads>
+
+                <!-- Mehr Retries bei 429/503 (Default: 3) -->
+                <aether.connector.http.retryHandler.count>5</aether.connector.http.retryHandler.count>
+
+                <!-- Längeres initiales Backoff (Default: 5000ms) -->
+                <aether.connector.http.retryHandler.interval>10000</aether.connector.http.retryHandler.interval>
+
+                <!-- Max. Backoff-Obergrenze (Default: 300000ms = 5min) -->
+                <aether.connector.http.retryHandler.intervalMax>120000</aether.connector.http.retryHandler.intervalMax>
+
+                <!-- Connections pro Route reduzieren (Default: 50) -->
+                <aether.connector.http.maxConnectionsPerRoute>8</aether.connector.http.maxConnectionsPerRoute>
+            </properties>
+        </profile>
     </profiles>
 
     <activeProfiles>
         <!-- Order define the Query-Order -->
         <activeProfile>default</activeProfile>
+        <activeProfile>rate-limit</activeProfile>
     </activeProfiles>
 </settings>
