@@ -70,7 +70,7 @@
                     <releases>
                         <enabled>true</enabled>
                         <updatePolicy>daily</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
+                        <checksumPolicy>fail</checksumPolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>

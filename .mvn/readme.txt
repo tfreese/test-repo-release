@@ -6,7 +6,7 @@ mvn wrapper:wrapper
 # 2. Call updates maven-wrapper.jar and mvnw.* Files.
 
 #./mvnw wrapper:wrapper -Dtype=bin -Dmaven=...
-./mvnw wrapper:wrapper -Dmaven=3.9.16
+./mvnw wrapper:wrapper -Dmaven=3.10.0
 
 # Using Wrapper
 ./mvnw GOAL
